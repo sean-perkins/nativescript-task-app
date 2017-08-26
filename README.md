@@ -5,6 +5,7 @@ This repository demonstrates an example task management application built with N
 - NativeScript Angular
 - RxJS / NgRx (State / Effects / Actions / Reducers)
 - Model-Driven Objects
+- Lazy-Loading Modules
 - Offline Mode (Persistent Storage / App Settings)
 - Angular Reactive Forms
 - TypeScript Static Sub-classing for NgRx Actions
