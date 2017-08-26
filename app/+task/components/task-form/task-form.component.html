@@ -1,0 +1,38 @@
+<GridLayout rows="40, *" [class.night]="!isDayTime">
+    <StackLayout class="action-bar" columns="*, *" width="100%">
+        <Button class="btn-cancel"
+            text="Cancel" (tap)="cancel()"></Button>
+        <Button col="1" class="btn-save"
+            text="Save" (tap)="save()"></Button>
+    </StackLayout>
+    <GridLayout [formGroup]="form" rows="auto, auto, 20, auto, auto, 20, auto, auto, *, auto, 20, auto" class="form-container" row="1">
+        <!-- Task Name Input -->
+        <Label class="label" [class.error]="submitted"
+            text="Task Name*"></Label>
+        <TextField row="1"
+            class="input"
+            formControlName="name"
+            hint="Task Name"
+            text=""></TextField>
+
+        <!-- Task Description Input -->
+        <Label row="3" class="label" text="Task Description"></Label>
+        <TextView row="4" class="input textarea"
+            formControlName="description"
+            hint="Task Description" text=""></TextView>
+
+        <Label row="6" class="label" [visibility]="isCreate ? 'collapse' : 'visible'"
+            text="Completed"></Label>
+        <Switch row="7" horizontalAlignment="left" [visibility]="isCreate ? 'collapse' : 'visible'"
+            marginTop="10"
+            formControlName="complete"></Switch>
+
+        <!-- Meta Information -->
+        <Label row="9" class="label createdAt" *ngIf="task"
+            text="Created at {{ task.createdAt | date: 'MM/dd/yy hh:mm a' }}"></Label>
+        <Label row="10" *ngIf="task"
+            class="label" text="Last Updated on {{ task.updatedAt | date: 'shortDate' }}"></Label>
+        <Label row="11" class="label" *ngIf="task && task.completed"
+            text="Completed at {{ task.completedAt | date: 'MM/dd/yy hh:mm a' }}"></Label>
+    </GridLayout>
+</GridLayout>

@@ -1,0 +1,63 @@
+.placeholder {
+    height:100%;
+}
+
+.placeholder Label {
+    color:#87797f;
+}
+
+.count-bar {
+    background-color: #fff;
+    border-bottom-width: 1;
+    border-bottom-color: #FBF8F8;
+}
+
+.btn-complete {
+    background-color: #03dd79;
+}
+
+.btn-swipe {
+    padding: 0 16;
+    orientation: horizontal;
+}
+
+.btn-swipe Label {
+    color: #fff;
+    font-size: 20;
+    horizontal-align: center;
+}
+
+.fab {
+    horizontal-align: right;
+    vertical-align: bottom;
+    text-align:center;
+    margin: 0 20 20 0;
+    font-size: 22;
+    padding: 0;
+    border-width: 1;
+    color: #fff;
+    border-radius:50;
+    width: 50;
+    height: 50;
+}
+
+.list-item {
+    padding: 10 15;
+    border-bottom-width: 1;
+    border-bottom-color: #FBF8F8;
+}
+
+.list-item.complete {
+    opacity: 0.1;
+}
+
+.list-item .title {
+    color: #a3979e;
+    font-weight: 400;
+    font-size: 18;
+}
+.list-item .description {
+    color: #87797f;
+    font-size: 14;
+}
+

@@ -1,0 +1,12 @@
+.count {
+    padding-bottom: 20;
+    font-size: 22;
+    text-align: center;
+}
+
+.count-label {
+    text-align: center;
+    padding-top: 20;
+    font-size: 12;
+    color: #9b8e94;
+}

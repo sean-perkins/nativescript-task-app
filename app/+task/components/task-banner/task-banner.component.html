@@ -1,0 +1,6 @@
+<GridLayout class="banner"
+    orientation="horizontal" height="100%">
+    <Label class="title" text="{{ todayLabel }} Task List"></Label>
+    <Label class="today" row="0" [text]="today | date"></Label>
+    <Button class="btn-clear" row="0" text="Clear All" (tap)="clearTask()"></Button>
+</GridLayout>
