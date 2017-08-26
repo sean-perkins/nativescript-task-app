@@ -28,6 +28,9 @@ This repository demonstrates an example task management application built with N
 |<img width="394" alt="screen shot 2017-08-26 at 3 37 08 pm" src="https://user-images.githubusercontent.com/13732623/29744518-6f2bc1e8-8a74-11e7-8674-9988d56d56a3.png">|<img width="394" alt="screen shot 2017-08-26 at 3 36 47 pm" src="https://user-images.githubusercontent.com/13732623/29744521-7be4fd14-8a74-11e7-997d-00eb709f45ee.png">|
 |<img width="394" alt="screen shot 2017-08-26 at 3 34 15 pm" src="https://user-images.githubusercontent.com/13732623/29744515-48434e3e-8a74-11e7-9544-115fd997122d.png">|<img width="394" alt="screen shot 2017-08-26 at 3 36 37 pm" src="https://user-images.githubusercontent.com/13732623/29744523-84d312c6-8a74-11e7-987d-3039a7054095.png">|
 
+## Credits / References
+* [Zoeyshen](https://dribbble.com/zoeyshen) for the initial graphics. Show her some love on Dribbble.
+* [MadebyOliver](https://www.flaticon.com/authors/madebyoliver) for the initial references for the task icons.
 
 # Contributors
 
