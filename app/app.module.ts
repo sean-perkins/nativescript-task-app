@@ -4,10 +4,6 @@ import { NativeScriptModule } from 'nativescript-angular/nativescript.module';
 import { AppRoutingModule } from './app.routing';
 import { AppComponent } from './app.component';
 
-import { ItemService } from './item/item.service';
-import { ItemsComponent } from './item/items.component';
-import { ItemDetailComponent } from './item/item-detail.component';
-
 import { StoreModule } from '@ngrx/store';
 import { AppStoreModule } from './store/store.module';
 import { AppReducer } from './store/app.state';
@@ -29,12 +25,9 @@ import { AppReducer } from './store/app.state';
         StoreModule.provideStore(AppReducer),
     ],
     declarations: [
-        AppComponent,
-        ItemsComponent,
-        ItemDetailComponent
+        AppComponent
     ],
     providers: [
-        ItemService,
         { provide: NgModuleFactoryLoader, useClass: NSModuleFactoryLoader },
     ],
     schemas: [
