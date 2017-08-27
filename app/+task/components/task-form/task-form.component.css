@@ -17,6 +17,10 @@
     width: 50%;
     padding-left: 20;
     color: #fff;
+    background-color:transparent;
+    border-color: transparent;
+    border-width: 1;
+    text-transform: capitalize;
 }
 
 .btn-save {
@@ -25,6 +29,10 @@
     padding-right:20;
     color: #fff;
     font-weight:bold;
+    border-color: transparent;
+    border-width: 1;
+    background-color:transparent;
+    text-transform: capitalize;
 }
 
 .label {

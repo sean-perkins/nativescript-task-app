@@ -9,40 +9,43 @@
             [count]="(tasks$ | async)?.length" label="All"></ns-task-count>
     </GridLayout>
     <RadListView row="2" height="100%"
+        backgroundColor="white"
+        selectionBehavior="LongPress"
         (itemSwipeProgressStarted)="onSwipeCellStarted($event)"
         (itemSwipeProgressChanged)="onCellSwiping($event)"
         (itemSwipeProgressEnded)="onSwipeCellFinished($event)"
+        (itemSelected)="displayForm($event)"
         swipeActions="true"
         [items]="displayedTasks$ | async">
         <ng-template let-item="item" let-i="index">
-            <StackLayout
+            <StackLayout backgroundColor="white"
                 class="list-item"
-                [class.complete]="item.completed"
-                (longPress)="displayForm(item)">
+                [class.complete]="item.completed">
                 <Label class="title" [text]="item.name"></Label>
                 <Label class="description" [text]="item.description"></Label>
             </StackLayout>
         </ng-template>
         <GridLayout *tkListItemSwipeTemplate
             columns="auto, *, auto"
-            backgroundColor="White">
-            <StackLayout id="mark-view" col="0" class="btn-swipe btn-complete" (tap)="onLeftSwipeClick($event)">
+            backgroundColor="white">
+            <StackLayout id="mark-view" col="0"
+                 class="btn-swipe btn-complete"
+                 (tap)="onLeftSwipeClick($event)">
                 <Label id="mark-text" text="Complete"></Label>
             </StackLayout>
-            <StackLayout id="delete-view" col="2" class="btn-swipe btn-delete" (tap)="onRightSwipeClick($event)" >
+            <StackLayout id="delete-view" col="2"
+                class="btn-swipe btn-delete"
+                (tap)="onRightSwipeClick($event)">
                 <Label id="delete-text" text="Delete"></Label>
             </StackLayout>
         </GridLayout>
     </RadListView>
     <GridLayout row="2" *ngIf="(displayedTasks$ | async).length === 0" class="placeholder"
-        rows="auto">
-        <Image [src]="placeholderImage"
-            textAlignment="center"
-            verticalAlignment="center"
-            marginBottom="120"
-            width="72"
-            height="72"></Image>
-        <Label height="100%" textAlignment="center" verticalAlignment="center" text="All caught up!"></Label>
+        rows="*">
+        <StackLayout verticalAlignment="center">
+            <Image [src]="placeholderImage"></Image>
+            <Label text="All caught up!"></Label>
+        </StackLayout>
     </GridLayout>
     <Button row="2" text="+" class="fab"
         (tap)="displayForm()"></Button>

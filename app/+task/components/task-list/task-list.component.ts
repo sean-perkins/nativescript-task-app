@@ -9,6 +9,8 @@ import { View, layout } from 'tns-core-modules/ui/core/view';
 import { ListViewEventData, RadListView, SwipeActionsEventData } from 'nativescript-telerik-ui/listview';
 import { Actions } from '@ngrx/effects';
 
+import { isAndroid } from 'tns-core-modules/platform';
+
 import { NSDate } from '../../../utils/Date';
 
 import { default as taskActions } from '../../../store/actions/task.actions';
@@ -26,13 +28,13 @@ export type SupportedFilters = 'all' | 'completed' | 'pending';
 export class TaskListComponent implements OnInit {
     // The collection to hold all tasks
     tasks$: Observable<Task[]>;
-    // The collection to hold pending tasks
+    // The collection to hold pending tasks test
     completedTasks$: Observable<Task[]>;
     // The collection to hold pending (incomplete) tasks
     pendingTasks$: Observable<Task[]>;
 
-    private leftThresholdPassed = false;
-    private rightThresholdPassed = false;
+    leftThresholdPassed = false;
+    rightThresholdPassed = false;
 
     private activeFilter: SupportedFilters = 'all';
 
@@ -45,6 +47,7 @@ export class TaskListComponent implements OnInit {
 
     ngOnInit(): void {
         this.page.backgroundSpanUnderStatusBar = true;
+        this.page.actionBarHidden = true;
         this.page.backgroundColor = new Color(NSDate.isDayTime() ? '#ff9d6e' : '#0061ef');
 
         this.tasks$ = this.store$.let(getTasks);
@@ -77,30 +80,34 @@ export class TaskListComponent implements OnInit {
      * Displays the modal for creating or updating a task
      * @param existingTask The task to update (optional)
      */
-    displayForm(existingTask?: Task): void {
-        const options: ModalDialogOptions = {
-            viewContainerRef: this.vcRef,
-            context: existingTask,
-            fullscreen: false, // defaults true on Phone
-        };
-        this.modalService.showModal(TaskFormComponent, options)
-            .then(formData => {
-                if (formData) {
-                    const task = new Task((<any>Object).assign({}, existingTask, formData));
-                    // If the task has an id, update the task
-                    if (task.id !== null) {
-                        console.log('the task', task);
-                        task.update();
-                        this.store$.dispatch(new taskActions.UpdateAction(task));
-                        this.onTaskUpdateSuccess();
-                    }
-                    else {
-                        // otherwise initialize a new task
-                        task.initalize();
-                        this.store$.dispatch(new taskActions.CreateAction(task));
-                        this.onTaskCreateSuccess();
-                    }
-                }
+    displayForm(args?: ListViewEventData): void {
+        this.displayedTasks$.take(1)
+            .subscribe(tasks => {
+                const existingTask = args ? tasks[args.index] : undefined;
+                const options: ModalDialogOptions = {
+                    viewContainerRef: this.vcRef,
+                    context: existingTask,
+                    fullscreen: false, // defaults true on Phone
+                };
+                this.modalService.showModal(TaskFormComponent, options)
+                    .then(formData => {
+                        if (formData) {
+                            const task = new Task((<any>Object).assign({}, existingTask, formData));
+                            // If the task has an id, update the task
+                            if (task.id !== null) {
+                                console.log('the task', task);
+                                task.update();
+                                this.store$.dispatch(new taskActions.UpdateAction(task));
+                                this.onTaskUpdateSuccess();
+                            }
+                            else {
+                                // otherwise initialize a new task
+                                task.initalize();
+                                this.store$.dispatch(new taskActions.CreateAction(task));
+                                this.onTaskCreateSuccess();
+                            }
+                        }
+                    });
             });
     }
 
@@ -178,7 +185,7 @@ export class TaskListComponent implements OnInit {
     }
 
     get placeholderImage(): string {
-        return `res://app/images/tasks-complete-${NSDate.isDayTime() ? 'day' : 'night'}.png`;
+        return `res://tasks_complete_${NSDate.isDayTime() ? 'day' : 'night'}`;
     }
 
     private onTaskUpdateSuccess(): void {

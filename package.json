@@ -7,6 +7,9 @@
     "id": "org.nativescript.nativescripteventapp",
     "tns-ios": {
       "version": "3.2.0-2017-8-25-1"
+    },
+    "tns-android": {
+      "version": "3.2.0-next-2017-06-28-1901"
     }
   },
   "dependencies": {
@@ -22,8 +25,8 @@
     "@ngrx/effects": "^2.0.2",
     "@ngrx/store": "^2.2.1",
     "nativescript-angular": "~4.2.0",
-    "nativescript-theme-core": "~1.0.2",
     "nativescript-telerik-ui": "^3.0.4",
+    "nativescript-theme-core": "~1.0.2",
     "ngrx-store-freeze": "0.1.9",
     "reflect-metadata": "~0.1.8",
     "rxjs": "~5.4.2",
@@ -33,8 +36,12 @@
   "devDependencies": {
     "@angular/compiler-cli": "~4.2.0",
     "@ngtools/webpack": "~1.5.0",
+    "babel-traverse": "6.26.0",
+    "babel-types": "6.26.0",
+    "babylon": "6.18.0",
     "copy-webpack-plugin": "~4.0.1",
     "extract-text-webpack-plugin": "~3.0.0",
+    "lazy": "1.0.11",
     "nativescript-css-loader": "~0.26.0",
     "nativescript-dev-typescript": "~0.5.0",
     "nativescript-dev-webpack": "^0.7.3",

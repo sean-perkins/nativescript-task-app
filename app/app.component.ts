@@ -2,6 +2,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import './operators';
 import * as app from 'tns-core-modules/application';
 import { NSDate } from './utils/Date';
+import { isAndroid } from 'tns-core-modules/platform';
 
 @Component({
     selector: 'ns-app',
@@ -21,7 +22,7 @@ export class AppComponent {
                 color: ${accentColor};
             }
             .banner {
-                background-image: url('res://app/images/app-bg-${NSDate.isDayTime() ? 'day' : 'night'}.jpg');
+                background-image: url('res://app_bg_${NSDate.isDayTime() ? 'day' : 'night'}');
             }
             .action-bar, .btn-delete {
                 background-color: ${accentColor}
@@ -32,4 +33,5 @@ export class AppComponent {
             }
         `;
     }
+
 }

@@ -1,9 +1,19 @@
 .placeholder {
-    height:100%;
+    height: 100%;
 }
 
 .placeholder Label {
-    color:#87797f;
+    color: #87797f;
+    text-align: center;
+    vertical-align: middle;
+    margin-top: 15;
+}
+
+.placeholder Image {
+    text-align: center;
+    vertical-align: center;
+    width: 72;
+    height: 72;
 }
 
 .count-bar {
@@ -30,24 +40,25 @@
 .fab {
     horizontal-align: right;
     vertical-align: bottom;
-    text-align:center;
+    text-align: center;
     margin: 0 20 20 0;
     font-size: 22;
     padding: 0;
     border-width: 1;
     color: #fff;
-    border-radius:50;
+    border-radius: 50;
     width: 50;
     height: 50;
 }
 
 .list-item {
     padding: 10 15;
+    background-color: #fff;
     border-bottom-width: 1;
     border-bottom-color: #FBF8F8;
 }
 
-.list-item.complete {
+.list-item.complete Label {
     opacity: 0.1;
 }
 
@@ -56,8 +67,8 @@
     font-weight: 400;
     font-size: 18;
 }
+
 .list-item .description {
     color: #87797f;
     font-size: 14;
 }
-

@@ -59,8 +59,12 @@ export class TaskFormComponent {
             id: [task.id],
             name: [task.name, Validators.required],
             description: [task.description],
-            complete: [this.task && this.task.completed]
+            complete: [false]
         });
+
+        if (this.task && this.task.completed) {
+            this.form.get('complete').setValue(true);
+        }
     }
 
     /**
