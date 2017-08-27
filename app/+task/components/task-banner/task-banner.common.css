@@ -1,0 +1,41 @@
+.banner {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.banner .title {
+    horizontal-align: right;
+    text-align: right;
+    vertical-align: top;
+    color: #fff;
+    width: 100%;
+    font-size: 22;
+    font-weight: bold;
+    padding: 20;
+}
+
+.banner .today {
+    horizontal-align: right;
+    text-align: right;
+    vertical-align: top;
+    color: #fff;
+    width: 100%;
+    font-size: 15;
+    padding: 20;
+    margin-top: 30;
+}
+
+.banner .btn-clear {
+    horizontal-align: left;
+    text-align: left;
+    vertical-align: bottom;
+    padding: 10 20;
+    font-size: 10;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    background-color: transparent;
+    border-color: transparent;
+    border-width: 1;
+}
