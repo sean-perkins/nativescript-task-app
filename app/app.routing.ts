@@ -6,7 +6,7 @@ const routes: Routes = [
     { path: '', redirectTo: '/tasks', pathMatch: 'full' },
     {
         path: 'tasks',
-        loadChildren: '/+task/task.module#TaskModule'
+        loadChildren: './+task/task.module#TaskModule'
     }
 ];
 
