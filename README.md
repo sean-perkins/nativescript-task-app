@@ -1,4 +1,4 @@
-# NativeScript Event App
+# NativeScript Task App
 This repository demonstrates an example task management application built with NativeScript Angular.
 
 #### Technologies
