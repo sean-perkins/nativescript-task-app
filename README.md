@@ -21,6 +21,11 @@ This repository demonstrates an example task management application built with N
 - App branding will change from daytime mode at 8am to nighttime mode at 7pm.
 - Filter between complete, incomplete and all tasks by tapping the statistic bar sections.
 
+## Getting Started
+1. Download or clone this repository.
+2. Install dependencies `npm i` or `npm install`.
+3. Install and run your desired runtime `tns run ios` or `tns run android`.
+
 
 ### App Images
 
