@@ -1,5 +1,6 @@
 .action-bar {
     orientation: horizontal;
+    margin-top: 20;
 }
 
 .night .action-bar {
